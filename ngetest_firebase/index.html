@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Firebase Logbook</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <!-- LOGIN -->
+
+  <div class="auth-container" id="auth-container">
+
+    <div class="auth-box">
+
+      <h1>Login User</h1>
+
+      <input
+        type="email"
+        id="email"
+        placeholder="Email"
+      >
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Password"
+      >
+
+      <button onclick="registerUser()">
+        Register
+      </button>
+
+      <button onclick="loginUser()">
+        Login
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- DASHBOARD -->
+
+  <div class="container" id="dashboard">
+
+    <div class="topbar">
+
+      <h1>Logbook Dashboard</h1>
+
+      <button onclick="logoutUser()">
+        Logout
+      </button>
+
+    </div>
+
+
+    <div class="form-box">
+
+      <label>Tanggal</label>
+
+      <input type="date" id="tanggal">
+
+
+      <label>Kegiatan</label>
+
+      <textarea
+        id="kegiatan"
+        placeholder="Tulis kegiatan hari ini..."
+      ></textarea>
+
+
+      <button onclick="tambahLogbook()">
+        Tambah Logbook
+      </button>
+
+    </div>
+
+
+    <h2 class="section-title">
+  Logbook Saya
+</h2>
+
+<div id="list-logbook"></div>
+
+
+<h2 class="section-title">
+  Semua Logbook User
+</h2>
+
+<div id="all-logbook"></div>
+
+  </div>
+
+
+  <!-- FIREBASE -->
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

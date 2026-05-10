@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Rahasia</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+    
+            background-image: url("6b7ac3c1e03bf0fe43c01eb9ddb6445f.jpg"); /* nama file kamu */
+            background-size: cover;             /* biar full layar */
+            background-position: center;        /* posisi tengah */
+            background-repeat: no-repeat;       /* ga diulang */
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: rgb(229, 197, 223);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            max-width: 350px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .yes {
+            background-color: #ff6b81;
+            color: white;
+        }
+
+        .no {
+            background-color: #d465e5;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1 id="text">Aku ada sesuatu yang mau aku bilang...</h1>
+    <button class="yes" onclick="nextStep()">Mau tau</button>
+    <button class="no" id="noBtn">Engga</button>
+</div>
+
+<script>
+    let step = 0;
+
+    function nextStep() {
+        const text = document.getElementById("text");
+        const noBtn = document.getElementById("noBtn");
+
+        step++;
+
+        if (step === 1) {
+            text.innerHTML = "Serius nih mau tau? 😳";
+        } else if (step === 2) {
+            text.innerHTML = "Janji ga bakal ilfeel? 😶";
+        } else if (step === 3) {
+            text.innerHTML = "Sebenernya...";
+        } else if (step === 4) {
+            text.innerHTML = "Aku suka kamu 🙂";
+            noBtn.style.display = "none";
+        }
+    }
+
+    // Tombol "Engga" kabur
+    const noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("mouseover", function() {
+        const x = Math.random() * window.innerWidth - 100;
+        const y = Math.random() * window.innerHeight - 50;
+
+        noBtn.style.position = "absolute";
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    });
+</script>
+
+</body>
+</html>
